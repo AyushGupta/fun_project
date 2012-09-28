@@ -1,0 +1,18 @@
+<h1><%=@images.first.image_category.title%></h1>
+	<!--<div class="product_box">
+    	<a href="productdetail.html"><img src="images/product/01.jpg" alt="Image 01" /></a>
+        <h3>Integer eleifend sed</h3>
+        <p class="product_price">$ 100</p>
+        <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
+        <a href="productdetail.html" class="detail">Detail</a>
+ </div> -->
+<% @images.each do |image| %>
+	<div class="product_box">
+		<%= image_tag(image.image_url, :class => 'list_image') %>
+		<h3><%= image.title%></h3>
+		<%= link_to 'Show', image %>
+		<%= link_to 'Edit', edit_image_path(image) %>
+		<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+<% end %>
+<%= link_to 'New Image', new_image_path %>
