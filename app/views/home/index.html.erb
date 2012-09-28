@@ -1,2 +1,15 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Image Categories</h1>
+	<!--<div class="product_box">
+    	<a href="productdetail.html"><img src="images/product/01.jpg" alt="Image 01" /></a>
+        <h3>Integer eleifend sed</h3>
+        <p class="product_price">$ 100</p>
+        <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
+        <a href="productdetail.html" class="detail">Detail</a>
+ </div> -->
+<% @image_categories.each do |image_category| %>
+	<div class="product_box">
+		<%= link_to image_tag(image_category.images.first.image_url, :class => 'list_image'),:controller => "images", :action=>"index",:id=> image_category.id %>
+		<h3><%= image_category.title%></h3>
+		<p class="product_price"><%= image_category.images.count%></p>
+	</div>
+<% end %>
