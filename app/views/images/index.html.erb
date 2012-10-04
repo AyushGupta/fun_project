@@ -6,13 +6,41 @@
         <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
         <a href="productdetail.html" class="detail">Detail</a>
  </div> -->
-<% @images.each do |image| %>
+<!--<% @images.each do |image| %>
 	<div class="product_box">
 		<%= image_tag(image.image_url, :class => 'list_image') %>
 		<h3><%= image.title%></h3>
-		<%= link_to 'Show', image %>
+		<!--<%= link_to 'Show', image %>
 		<%= link_to 'Edit', edit_image_path(image) %>
 		<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</div>
-<% end %>
-<%= link_to 'New Image', new_image_path %>
+<% end %>-->
+<!--<%= link_to 'New Image', new_image_path %>-->
+<div id="barousel_itemnav" class="barousel">
+	
+	<div class="barousel_image">
+			<% @images.each do |image| %>
+				<%= image_tag(image.image_url, :class => 'default') %>
+				<!--<%= link_to 'Show', image %>
+				<%= link_to 'Edit', edit_image_path(image) %>
+				<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>-->
+			<% end %>
+	</div>
+	<div class="barousel_content">
+		</div>
+	<div class="barousel_nav">
+		<ul>
+			<% @images.each do |image| %>
+					<li><%= link_to '#', {}, :class=>'current' %></li>
+					<!--<%= link_to 'Show', image %>
+					<%= link_to 'Edit', edit_image_path(image) %>
+					<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>-->
+			<% end %>
+		</ul>
+	</div>
+	
+</div>
+<script language="javascript" type="text/javascript">
+	$('#barousel_itemnav').barousel();
+</script>
+
