@@ -21,9 +21,9 @@
 	<div class="barousel_image">
 			<% @images.each_with_index do |image, index| %>
 				<% if(index==0)%>
-				<%= image_tag(image.image_url, :class => 'default') %>
+				<%= image_tag(image.image_url, :id=>image.id, :class => 'default') %>
 				<% else%>
-				<%= image_tag(image.image_url) %>
+				<%= image_tag(image.image_url, :id=>image.id) %>
 				<%end%>
 				<!--<%= link_to 'Show', image %>
 				<%= link_to 'Edit', edit_image_path(image) %>
@@ -36,9 +36,9 @@
 		<ul>
 			<% @images.each_with_index do |image, index| %>
 				<% if(index==0)%>
-					<li><a href="#" title=<%=image.title%> class="current"></a></li>
+					<li><a href="#" id=<%=image.id%> title=<%=image.id%> onclick="changeImage(this.title);" class="current"></a></li>
 				<%else%>
-					<li><a href="#" title=<%=image.title%>></a></li>
+					<li><a href="#" id=<%=image.id%>s title=<%=image.id%> onclick="changeImage(this.title);"></a></li>
 				<%end%>
 					<!--<%= link_to 'Show', image %>
 					<%= link_to 'Edit', edit_image_path(image) %>
@@ -48,6 +48,14 @@
 	</div>
 	
 </div>
+<script type="text/javascript">
+	function changeImage(index) {
+		$('.default').removeClass('default');
+		$('.current').removeClass('current');
+	  	$("#"+index).addClass('default');
+	  	$("#"+index+"s").addClass('current');
+	}
+</script>
 
 
 
