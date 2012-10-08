@@ -172,7 +172,7 @@ h6 {
 
 #content { 
 	width: 680px; 
-	height: 680px;
+/*	height: 680px;*/
 	background: #f0f0f0; 
 	border: 1px solid #fff; 
 	padding: 10px; 
@@ -185,7 +185,9 @@ h6 {
 	text-align: center;	
 	padding: 9px 19px;
 	background: #121212;
-	border: 1px solid #3a3a3a
+	border: 1px solid #3a3a3a;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #site_title { 
@@ -268,6 +270,7 @@ h6 {
 	position: relative;
 	background: #4c4a4a;
 	margin-bottom: 36px;
+	height: 320px;
 }
 
 .sidebar_box h3 { 

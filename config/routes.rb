@@ -1,5 +1,7 @@
 FunProject::Application.routes.draw do
   
+  get "contact/index"
+
   resources :images
 
   resources :image_categories
