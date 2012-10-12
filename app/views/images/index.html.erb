@@ -1,60 +1,24 @@
-<h3 style="width: 71%;border: 1px solid;background: #4C4A4A; margin-bottom:2px"><%=@images.first.image_category.title%></h3>
-	<!--<div class="product_box">
-    	<a href="productdetail.html"><img src="images/product/01.jpg" alt="Image 01" /></a>
-        <h3>Integer eleifend sed</h3>
-        <p class="product_price">$ 100</p>
-        <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
-        <a href="productdetail.html" class="detail">Detail</a>
- </div> -->
-<!--<% @images.each do |image| %>
-	<div class="product_box">
-		<%= image_tag(image.image_url, :class => 'list_image') %>
-		<h3><%= image.title%></h3>
-		<!--<%= link_to 'Show', image %>
+<h3 style="width: 97%;border: 1px solid;background: #4C4A4A; margin-bottom:2px"><%=@images.first.image_category.title%></h3>
+
+<div id="galleria">
+	<% @images.each_with_index do |image, index| %>
+		<% if(index==0)%>
+			<%= image_tag(image.image_url, :id=>image.id, :class => 'default') %>
+		<% else%>
+			<%= image_tag(image.image_url, :id=>image.id) %>
+		<%end%>
+		<!-- <%= link_to 'Show', image %>
 		<%= link_to 'Edit', edit_image_path(image) %>
-		<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
-	</div>
-<% end %>-->
-<!--<%= link_to 'New Image', new_image_path %>-->
-<div id="barousel_itemnav" class="barousel">
-	
-	<div class="barousel_image">
-			<% @images.each_with_index do |image, index| %>
-				<% if(index==0)%>
-				<%= image_tag(image.image_url, :id=>image.id, :class => 'default') %>
-				<% else%>
-				<%= image_tag(image.image_url, :id=>image.id) %>
-				<%end%>
-				<!--<%= link_to 'Show', image %>
-				<%= link_to 'Edit', edit_image_path(image) %>
-				<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>-->
-			<% end %>
-	</div>
-	<div class="barousel_content">
-	</div>
-	<div class="barousel_nav">
-		<ul>
-			<% @images.each_with_index do |image, index| %>
-				<% if(index==0)%>
-					<li><a href="#" id=<%=image.id%> title=<%=image.id%> onclick="changeImage(this.title);" class="current"></a></li>
-				<%else%>
-					<li><a href="#" id=<%=image.id%>s title=<%=image.id%> onclick="changeImage(this.title);"></a></li>
-				<%end%>
-					<!--<%= link_to 'Show', image %>
-					<%= link_to 'Edit', edit_image_path(image) %>
-					<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>-->
-			<% end %>
-		</ul>
-	</div>
-	
+		<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+	<% end %>
 </div>
-<script type="text/javascript">
-	function changeImage(index) {
-		$('.default').removeClass('default');
-		$('.current').removeClass('current');
-	  	$("#"+index).addClass('default');
-	  	$("#"+index+"s").addClass('current');
-	}
+<!-- <%= link_to 'New Image', new_image_path %> -->
+<style>
+    #galleria{ width: 100%; height: 400px; background: #000 }
+</style>
+<script>
+    Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+    Galleria.run('#galleria');
 </script>
 
 
