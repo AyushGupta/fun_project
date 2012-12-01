@@ -9,6 +9,7 @@
 <%= stylesheet_link_tag "/css/ddsmoothmenu" %>
 # <%= stylesheet_link_tag "/css/jquery.dualSlider.0.2" %>
 <%= stylesheet_link_tag "/css/barousel" %>
+<%= stylesheet_link_tag "/js/galleria/themes/classic/galleria.classic" %>
 
 
 <%= javascript_include_tag "/js/jquery.min" %>
@@ -262,9 +263,16 @@ ddsmoothmenu.init({
                 </div>
             </div>
         </div>
-        <div id="content" class="float_r">
+        <div id="content" class="float_m">
               	<%= yield %>
         </div> 
+        <div id="sidebar_box_right" class="float_r">
+              	<div class="sidebar_box"><span class="bottom"></span>
+            	<h3>Sponsored </h3>   
+                	<div class="content"> 
+                	</div>
+                </div>
+        </div>
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
     	

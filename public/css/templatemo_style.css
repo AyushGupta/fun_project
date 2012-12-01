@@ -137,10 +137,11 @@ h6 {
 .h50 { height: 50px }
 
 .float_l { float: left }
+.float_m { float: left }
 .float_r { float: right }
 
 #templatemo_wrapper {
-	width: 960px;
+	width: 1200px;
 	margin: 0 auto;
 	padding: 0 10px 10px;
 }
@@ -176,12 +177,14 @@ h6 {
 	background: #f0f0f0; 
 	border: 1px solid #fff; 
 	padding: 10px; 
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 #sidebar { width: 240px }
 
 #templatemo_footer {
-	width: 920px;
+	width: 1120px;
 	text-align: center;	
 	padding: 9px 19px;
 	background: #121212;

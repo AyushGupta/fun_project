@@ -1,4 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h3 style="width: 97.5%;border: 1px solid;background: #4C4A4A; margin-bottom:2px"><%=@image.image_category.title%></h3>
+<div id="galleria">
+	<div class="galleria-container notouch" style="width: 680px; height: 450px;">
+		<div class="galleria-stage">
+			<div class="galleria-images">
+				<div class="galleria-image-top" align="center">
+				</div>
+				<div class="galleria-image" align="center">
+					<%= image_tag(@image.image_url, :id=>@image.id) %>
+				</div>
+				<div class="galleria-image-bottom" align="center">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <b>Title:</b>
@@ -22,4 +38,4 @@
 
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<%= link_to 'Back', images_path %> -->
