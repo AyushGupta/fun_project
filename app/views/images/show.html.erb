@@ -1,14 +1,35 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <h3 style="width: 97.5%;border: 1px solid;background: #4C4A4A; margin-bottom:2px"><%=@image.image_category.title%></h3>
 <div id="galleria">
 	<div class="galleria-container notouch" style="width: 680px; height: 450px;">
 		<div class="galleria-stage">
 			<div class="galleria-images">
 				<div class="galleria-image-top" align="center">
+					<div class="galleria-image-top-float-l">
+					</div>
+					<div class="galleria-image-top-float-m">
+						<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" style="float:left;"></div>
+					</div>
+					<div class="galleria-image-top-float-r">
+					</div>
 				</div>
 				<div class="galleria-image" align="center">
 					<%= image_tag(@image.image_url, :id=>@image.id) %>
 				</div>
 				<div class="galleria-image-bottom" align="center">
+					<div class="galleria-image-bottom-l">
+					</div>
+					<div class="galleria-image-bottom-m">
+					</div>
+					<div class="galleria-image-bottom-r">
+					</div>
 				</div>
 			</div>
 		</div>
