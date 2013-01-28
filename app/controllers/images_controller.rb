@@ -1,17 +1,21 @@
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
+  
+  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
+  
   def index
     if params[:id]
       @images = Image.where("image_category_id=?", params[:id])
-    else
-      @images = Image.all :limit=>9
     end
-    
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @images }
+    if @images==nil or @images.size==0
+      flash[:error] = "Image category not found."
+      redirect_to :controller => 'home', :action=>'index'
+    else
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @images }
+      end
     end
   end
 
@@ -89,4 +93,11 @@ class ImagesController < ApplicationController
   def categoriezed_images
     @images = Image.where("image_category_id=?", params[:category_id])
   end
+  
+  protected
+  def not_found
+    flash[:error] = "Image not found."
+    redirect_to images_path
+  end
+  
 end

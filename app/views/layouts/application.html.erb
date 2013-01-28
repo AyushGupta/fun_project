@@ -7,7 +7,6 @@
 <meta name="description" content="Station Shop Theme, free CSS template provided by templatemo.com" />
 <%= stylesheet_link_tag "/css/templatemo_style" %>
 <%= stylesheet_link_tag "/css/ddsmoothmenu" %>
-# <%= stylesheet_link_tag "/css/jquery.dualSlider.0.2" %>
 <%= stylesheet_link_tag "/css/barousel" %>
 <%= stylesheet_link_tag "/js/galleria/themes/classic/galleria.classic" %>
 
@@ -17,7 +16,6 @@
 <%= javascript_include_tag "/js/jquery-1.3.2.min" %>
 <%= javascript_include_tag "/js/jquery.easing.1.3" %>
 <%= javascript_include_tag "/js/jquery.timers-1.2" %>
-# <%= javascript_include_tag "/js/jquery.dualSlider.0.3.min" %>
 <%= javascript_include_tag "/js/galleria-1.2.8.min" %>
 <%= javascript_include_tag "/js/galleria/themes/classic/galleria.classic.min" %>
 
@@ -109,7 +107,7 @@ ddsmoothmenu.init({
 	<div id="templatemo_header">
     
     	<div id="site_title">
-        	<h1><a href="http://www.templatemo.com">Free CSS Templates</a></h1>
+        	<h1><a href="">Free CSS Templates</a></h1>
         </div>
         
         <!--<div id="header_right">
@@ -145,7 +143,6 @@ ddsmoothmenu.init({
             </ul>
             <script type="text/javascript">
 				function selectedTab(index) {
-					alert(index);
 					$('.selected').removeClass('selected');
 				  	$("#"+index).addClass('selected');
 				}
@@ -283,7 +280,7 @@ ddsmoothmenu.init({
 			<%= link_to "Home", home_path%> <!--| <a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="checkout.html">Checkout</a> -->| <%= link_to "Contact", {:controller=> "/contact", :action=>"index"}%>
 		</p>
 
-    	Copyright © 2048 <a href="#">Your Company Name</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+    	Copyright © 2048 <a href="#">Your Company Name</a> | Designed by <a href="" target="_parent">Free CSS Templates</a>
     </div> <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->

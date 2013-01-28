@@ -1,6 +1,9 @@
 class ImageCategoriesController < ApplicationController
   # GET /image_categories
   # GET /image_categories.json
+  
+  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
+  
   def index
     @image_categories = ImageCategory.all
 
@@ -80,4 +83,11 @@ class ImageCategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  protected
+  def not_found
+    flash[:error] = "Image category not found."
+    redirect_to images_path
+  end
+  
 end
